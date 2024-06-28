@@ -1,0 +1,204 @@
+html {
+    font-size: 62.5%
+}
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+:root {
+font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25rem;
+font-size: 1.6rem;
+font-weight: 400;
+line-height: 1.5;
+height: 100vh;
+--h-color: rgb(18, 30, 75);
+--a-color: #ff8000;
+--border: 2px solid green;
+background-size: auto 150rem;
+}
+
+
+.background-container {
+background-color: white;
+background-size: 500% 500%;
+background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
+animation: bgAnimation 15s infinite linear;
+}
+
+@keyframes bgAnimation {
+    0%{
+        background-position: 0 85%;
+    }
+    50%{
+        background-position: 100% 20%;
+    }
+    100% {
+        background-position: 0 85%;
+    }
+}
+
+.button-sect{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.just-sect {
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.book{
+    display: flex;
+    margin-top: 1rem;
+    box-shadow: 0px 5px 20px;
+    background-color: lightpink;
+    border: solid rgb(226 43 57 / 21%);
+    border-radius: 7rem;
+    height: 90rem;
+    width: 60rem;
+}
+
+.personlist{
+    align-content: space-around;
+    width: 60rem;
+}
+
+.photo {
+    display: flex;
+    border-radius: 100%;
+    border: solid rgb(251 142 150);
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    padding: 1rem;
+}
+
+.clist {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+}
+
+.contact {
+    display: flex;
+    width: 55rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    gap: 6rem;
+    margin-left: 3rem;
+    flex-wrap: nowrap;
+    border-radius: 76px;
+    border: solid rgb(226 43 57 / 21%);
+    height: 15rem;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-sectdes {
+    color: black;
+    background-color: rgb(255 133 142);
+    display: flex;
+    border: solid rgb(255 133 142);
+    border-radius: 2rem;
+    justify-content: center;
+    width: 7rem;
+}
+
+.button-sect-bott{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.button-menu{
+    display: flex;
+    gap: 1rem;
+}
+
+.contact > div:nth-child(3) {
+    position: absolute;
+    padding-left: 33rem;
+}
+
+.button{
+    color: black;
+    background-color: rgb(255 133 142);
+    display: flex;
+    border: solid rgb(255 133 142);
+    border-radius: 2rem;
+    width: 4.5rem;
+    justify-content: center;
+}
+
+.search-bar{
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-design{
+    font-size: large;
+    padding: 3rem;
+}
+
+    
+
+label {
+    display: inline-block;;
+    width: 40px;
+    height: 20px;
+    background-color: #e4e4e4;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle:checked + label {
+    background-color: #000000;
+}
+
+.toggle:checked + label::before {
+    transform: translateX(20px);
+}
+
+.toggle {
+display: none;
+}
+
+/* font*/
+.josefin-sans {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
