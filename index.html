@@ -1,113 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-            rel="stylesheet">
-        <title>Phone Book</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <title>Phone Book</title>
+</head>
+
+<body class="background-container">
     <header>
-        <h1 class="josefin-sans title">My Phone Book</h1>
+        <h1 class="josefin-sans title info">My Phone Book</h1>
     </header>
-    <body class="background-container">
-        <section class="button-sect">
-            <div class="search-bar">
-                <span class="josefin-sans">light mode</span>
-                <input type="checkbox" class="toggle"
-                    id="toggle" />
-                <label for="toggle"></label>
-                <span class="josefin-sans">dark mode</span>
+    <section id="overlay" class="overlay"></section>
+    <script defer src="contacts.js"></script>
+    <script defer src="interactive.js"></script>
+    <section class="button-sect">
+        <div class="search-bar">
+            <span class="josefin-sans info">light mode</span>
+            <input onclick="toggleMode()" type="checkbox" class="toggle" id="toggle" />
+            <label for="toggle" class="label1"></label>
+            <span class="josefin-sans info">dark mode</span>
+        </div>
+        <div><button onclick="createContact()" class="button-sectdes josefin-sans">+
+                create</button></div>
+        <div><button class="button-sectdes josefin-sans" onclick="deleteAll()">delete
+                all</button></div>
+        <div class="search-bar">
+            <input class="josefin-sans search" type="text" placeholder="search">
+        </div>
+    </section>
+    <section class="just-sect button-menu">
+        <div class="book">
+            <div class="personlist">
+                <ul id="contacts-list" class="clist">
+
+                </ul>
             </div>
-            <div><button class="button-sectdes josefin-sans">+
-                    create</button></div>
-            <div><button
-                    class="button-sectdes josefin-sans">delete
-                    all</button></div>
-            <div class="search-bar">
-                <input class="josefin-sans" type="text"
-                    placeholder="search">
-            </div>
-        </section>
-        <section class="just-sect button-menu">
-            <div class="book">
-                <div class="personlist">
-                    <ul class="clist">
-                        <div>
-                            <li class="contact">
-                                <div class="photo"></div>
-                                <p class="josefin-sans">test</p>
-                                <div class="button-menu">
-                                    <button
-                                        class="button josefin-sans">view</button>
-                                    <button
-                                        class="button josefin-sans">edit</button>
-                                    <button
-                                        class="button josefin-sans">delete</button>
-                                </div>
-                            </li>
-                        </div>
-                        <li class="contact">
-                            <div class="photo"></div>
-                            <p class="josefin-sans">test</p>
-                            <div class="button-menu">
-                                <button
-                                    class="button josefin-sans">view</button>
-                                <button
-                                    class="button josefin-sans">edit</button>
-                                <button
-                                    class="button josefin-sans">delete</button>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="photo"></div>
-                            <p class="info josefin-sans">test</p>
-                            <div class="button-menu">
-                                <button
-                                    class="button josefin-sans">view</button>
-                                <button
-                                    class="button josefin-sans">edit</button>
-                                <button
-                                    class="button josefin-sans">delete</button>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="photo"></div>
-                            <p class="info josefin-sans">test</p>
-                            <div class="button-menu">
-                                <button
-                                    class="button josefin-sans">view</button>
-                                <button
-                                    class="button josefin-sans">edit</button>
-                                <button
-                                    class="button josefin-sans">delete</button>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="photo"></div>
-                            <p class="info josefin-sans">test</p>
-                            <div class="button-menu">
-                                <button
-                                    class="button josefin-sans">view</button>
-                                <button
-                                    class="button josefin-sans">edit</button>
-                                <button
-                                    class="button josefin-sans">delete</button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="button-sect-bott">
-            <button class="button-sectdes josefin-sans">next -></button>
-        </section>
-        <footer class="footer-design josefin-sans">
-            <p>Made By Yasmin And Samya!</p>
-        </footer>
-    </body>
+        </div>
+    </section>
+    <section class="button-sect-bott">
+        <button id="prev" class="button-sectdes josefin-sans none-show" onclick="previous()">previous</button>
+        <button id="next" class=" button-sectdes josefin-sans" onclick="next()">next
+            -></button>
+    </section>
+    <!-- pop up -->
+    <section id="popup" class="main-popup josefin-sans">
+        <div>
+            <span onclick="closeIX()" class="ix josefin-sans">X</span>
+            <h1>Add Contact</h1>
+            <form id="Contact-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="image">Add image:</label>
+                <input class="josefin-sans" src="" type="file" name="image" id="fileImg">
+                <br>
+                <label for="notes">Notes:</label>
+                <textarea name="notes" id="notes"></textarea>
+                <br>
+                <button onclick="save(event)" class="josefin-sans" type="submit">Save</button>
+            </form>
+        </div>
+    </section>
+    <!-- popp up edit-->
+    <section id="popup1" class="main-popup josefin-sans">
+        <div>
+            <p onclick="closeIX1()" class="ix josefin-sans">X</p>
+            <h1>Edit Contact</h1>
+            <form id="Contact-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name1" name="name" required>
+                <br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone1" name="phone" required>
+                <br>
+                <label for="address">Address:</label>
+                <input type="text" id="address1" name="address" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email1" name="email" required>
+                <br>
+                <label for="image">Add image:</label>
+                <input class="josefin-sans" src="" type="file" name="image" id="fileImg1" accept="image/*"
+                    size="5000000">
+                <br>
+                <label for="notes">Notes:</label>
+                <textarea name="notes" id="notes1"></textarea>
+                <br>
+                <button onclick="save(event)" class="josefin-sans" type="submit">Save</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-design josefin-sans info">
+        <p>Made By Yasmin And Samya!</p>
+    </footer>
+</body>
+
 </html>

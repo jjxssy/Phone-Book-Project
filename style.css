@@ -28,11 +28,18 @@ background-size: auto 150rem;
 
 
 .background-container {
-background-color: white;
-background-size: 500% 500%;
-background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
-animation: bgAnimation 15s infinite linear;
+    background-color: white;
+    background-size: 500% 500%;
+    background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
+    animation: bgAnimation 15s infinite linear;
 }
+
+.background-container2 {
+    background-color: black;
+    background-size: 500% 500%;
+    background-image: linear-gradient(60deg, rgb(29, 29, 82), rgb(50, 30, 52), rgb(45, 30, 57), rgb(55, 21, 21));
+    animation: bgAnimation 15s infinite linear;
+    }
 
 @keyframes bgAnimation {
     0%{
@@ -44,6 +51,48 @@ animation: bgAnimation 15s infinite linear;
     100% {
         background-position: 0 85%;
     }
+}
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+}
+
+.main-popup {
+    position: fixed;
+    top: 17%;
+    left: 33%;
+    padding: 48px;
+    border: 1px solid #ccc;
+    background-color: #ffffffbf;
+    margin: 0;
+    height: 346px;
+    border-radius: 5px;
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all .5s ease;
+}
+
+
+.overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-popup.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10px);
+    transition: all .5s ease;
 }
 
 .button-sect{
@@ -71,9 +120,23 @@ animation: bgAnimation 15s infinite linear;
     height: 90rem;
     width: 60rem;
 }
+.book2{
+    background-color: rgb(82 38 85);
+    border: solid rgb(189 129 228 / 45%);
+}
+
+.info {
+    color: black;
+}
+
+.text {
+    max-width: 7rem;
+    max-height: 6rem;
+    word-wrap: break-word;
+}
 
 .personlist{
-    align-content: space-around;
+    padding-top: 3rem;
     width: 60rem;
 }
 
@@ -91,7 +154,7 @@ animation: bgAnimation 15s infinite linear;
     display: flex;
     gap: 2rem;
     flex-direction: column;
-
+    align-items: center;
 }
 
 .contact {
@@ -99,13 +162,32 @@ animation: bgAnimation 15s infinite linear;
     width: 55rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    gap: 6rem;
-    margin-left: 3rem;
-    flex-wrap: nowrap;
     border-radius: 76px;
     border: solid rgb(226 43 57 / 21%);
     height: 15rem;
     align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.contact :nth-child(2) {
+    width: 12%;
+}
+
+.contact :nth-child(3){
+    width: 30%;
+}
+
+.contact .button-menu :nth-child(1){
+    width: 4.5rem;
+}
+
+.contact .button-menu :nth-child(2){
+    width: 4.5rem;
+}
+
+.contact .button-menu :nth-child(3){
+    width: 4.5rem;
 }
 
 .title {
@@ -122,23 +204,22 @@ animation: bgAnimation 15s infinite linear;
     justify-content: center;
     width: 7rem;
 }
+.button-sectdes2 {
+    background-color: rgb(134 55 115);
+    border: solid rgb(134 55 115);
+}
 
 .button-sect-bott{
     display: flex;
     margin-top: 1rem;
     justify-content: center;
+    gap: 1rem;
 }
 
 .button-menu{
     display: flex;
     gap: 1rem;
 }
-
-.contact > div:nth-child(3) {
-    position: absolute;
-    padding-left: 33rem;
-}
-
 .button{
     color: black;
     background-color: rgb(255 133 142);
@@ -149,9 +230,27 @@ animation: bgAnimation 15s infinite linear;
     justify-content: center;
 }
 
+.button2{
+    background-color: rgb(134 55 115);
+    border: solid rgb(134 55 115);
+}
+
 .search-bar{
     display: flex;
     gap: 1rem;
+}
+.info2 {
+    color: white;
+}
+
+.none-show {
+    display: none;
+}
+
+
+.search {
+    border-radius: 85px;
+    border-color: #d76e81;
 }
 
 .footer-design{
@@ -161,7 +260,7 @@ animation: bgAnimation 15s infinite linear;
 
     
 
-label {
+.label1 {
     display: inline-block;;
     width: 40px;
     height: 20px;
@@ -171,7 +270,11 @@ label {
     cursor: pointer;
 }
 
-label::before {
+.darkmode-border {
+    border: solid rgb(124 56 143);
+}
+
+.label1::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -194,6 +297,43 @@ label::before {
 .toggle {
 display: none;
 }
+
+.add-layer {
+    background-color: #0000007b;
+    width: fit-content;
+    height: fit-content;
+}
+
+.pop-sec{
+    display: none;
+    position: fixed;
+    top: 39%;
+    left: 26%;
+    padding: 48px;
+    border: 1px solid #ccc;
+    background-color: #ffffffbf;
+}
+
+
+.ix {
+    text-align: right;
+    color: rgb(198, 0, 0);
+}
+/*test poppup*/
+#popup1 {
+    display: none;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 
 /* font*/
 .josefin-sans {
