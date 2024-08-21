@@ -31,23 +31,16 @@
         <div><button class="button-sectdes josefin-sans" onclick="deleteAll()">delete
                 all</button></div>
         <div class="search-bar">
-            <input class="josefin-sans search" type="text" placeholder="search">
+            <input class="josefin-sans search" type="text" placeholder="search" onclick="search()">
         </div>
     </section>
     <section class="just-sect button-menu">
         <div class="book">
             <div class="personlist">
                 <ul id="contacts-list" class="clist">
-
                 </ul>
             </div>
         </div>
-    </section>
-    <section class="button-sect-bott">
-        <button id="prev" class="button-sectdes josefin-sans none-show" onclick="previous()">previous</button>
-        <button id="next" class=" button-sectdes josefin-sans" onclick="next()">next
-            -></button>
-    </section>
     <!-- pop up -->
     <section id="popup" class="main-popup josefin-sans">
         <div>
@@ -67,7 +60,7 @@
                 <input type="email" id="email" name="email" required>
                 <br>
                 <label for="image">Add image:</label>
-                <input class="josefin-sans" src="" type="file" name="image" id="fileImg">
+                <input class="josefin-sans" src="" type="text" name="image" id="fileImg">
                 <br>
                 <label for="notes">Notes:</label>
                 <textarea name="notes" id="notes"></textarea>
@@ -76,7 +69,7 @@
             </form>
         </div>
     </section>
-    <!-- popp up edit-->
+    <!-- pop up edit-->
     <section id="popup1" class="main-popup josefin-sans">
         <div>
             <p onclick="closeIX1()" class="ix josefin-sans">X</p>
@@ -95,8 +88,7 @@
                 <input type="email" id="email1" name="email" required>
                 <br>
                 <label for="image">Add image:</label>
-                <input class="josefin-sans" src="" type="file" name="image" id="fileImg1" accept="image/*"
-                    size="5000000">
+                <input class="josefin-sans" src="" type="text" name="image" id="fileImg1" >
                 <br>
                 <label for="notes">Notes:</label>
                 <textarea name="notes" id="notes1"></textarea>
@@ -105,7 +97,14 @@
             </form>
         </div>
     </section>
-
+    <!-- pop up view-->
+    <section id="popup2" class="main-popup josefin-sans">
+        <div>
+            <p onclick="closeIX2()" class="ix josefin-sans">X</p>
+            <h1>Contact</h1>
+            <p id="details"></p>
+        </div>
+    </section>
     <footer class="footer-design josefin-sans info">
         <p>Made By Yasmin And Samya!</p>
     </footer>

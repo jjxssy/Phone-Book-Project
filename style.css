@@ -52,6 +52,7 @@ background-size: auto 150rem;
         background-position: 0 85%;
     }
 }
+/*popup overlay*/
 .overlay {
     position: fixed;
     left: 0;
@@ -64,7 +65,7 @@ background-size: auto 150rem;
     visibility: hidden;
     transition: all .5s ease;
 }
-
+/* main poppups */
 .main-popup {
     position: fixed;
     top: 17%;
@@ -104,22 +105,25 @@ background-size: auto 150rem;
 }
 
 .just-sect {
+    flex-direction: column;
     justify-content: center;
     margin-top: 1rem;
     align-items: center;
     padding-bottom: 1rem;
 }
-
+/*phone number color */
 .book{
     display: flex;
     margin-top: 1rem;
+    padding-bottom: 3rem;
     box-shadow: 0px 5px 20px;
     background-color: lightpink;
     border: solid rgb(226 43 57 / 21%);
     border-radius: 7rem;
-    height: 90rem;
+    height: auto;
     width: 60rem;
 }
+/* phone number darkmode*/
 .book2{
     background-color: rgb(82 38 85);
     border: solid rgb(189 129 228 / 45%);
@@ -134,7 +138,7 @@ background-size: auto 150rem;
     max-height: 6rem;
     word-wrap: break-word;
 }
-
+/*placement of the phonebook*/
 .personlist{
     padding-top: 3rem;
     width: 60rem;
@@ -247,12 +251,12 @@ background-size: auto 150rem;
     display: none;
 }
 
-
+/* search bar*/
 .search {
     border-radius: 85px;
     border-color: #d76e81;
 }
-
+/* footer */
 .footer-design{
     font-size: large;
     padding: 3rem;
@@ -269,7 +273,7 @@ background-size: auto 150rem;
     position: relative;
     cursor: pointer;
 }
-
+/* darkmode */
 .darkmode-border {
     border: solid rgb(124 56 143);
 }
@@ -303,7 +307,6 @@ display: none;
     width: fit-content;
     height: fit-content;
 }
-
 .pop-sec{
     display: none;
     position: fixed;
@@ -313,8 +316,6 @@ display: none;
     border: 1px solid #ccc;
     background-color: #ffffffbf;
 }
-
-
 .ix {
     text-align: right;
     color: rgb(198, 0, 0);
@@ -331,10 +332,6 @@ display: none;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
-
-
 /* font*/
 .josefin-sans {
     font-family: "Josefin Sans", sans-serif;
@@ -342,3 +339,36 @@ display: none;
     font-weight: weight;
     font-style: normal;
 }
+/* media Responsive*/
+@media (max-width: 768px) {
+    .main-popup {
+        top: 10%;
+        left: 5%;
+        height: auto;
+    }
+
+    .overlay {
+        visibility: visible;
+    }
+}
+@media (max-width: 480px) {
+    .book, .book2 {
+        width: 100%; 
+    }
+
+    .main-popup {
+        width: 95%;
+        top: 5%;
+        left: 2.5%;
+    }
+
+    .contact {
+        width: 37rem;
+        padding: 1rem; 
+    }
+
+    .button-sect, .button-sect-bott {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+    }
+}
+
