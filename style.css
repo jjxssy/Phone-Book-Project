@@ -11,7 +11,6 @@ padding: 0;
 :root {
 font-size: 62.5%;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -25,14 +24,14 @@ body {
     background-size: auto 150rem;
 }
 
-
+/*background colors*/
 .background-container {
     background-color: white;
     background-size: 500% 500%;
     background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
     animation: bgAnimation 15s infinite linear;
 }
-
+/* darkmoode background color*/
 .background-container2 {
     background-color: black;
     background-size: 500% 500%;
@@ -328,7 +327,6 @@ display: none;
     flex-direction: column;
     border: 1px solid black;
     padding: 20px;
-   
     top: 34%;
     left: 50%;
     transform: translate(-50%, -50%);
