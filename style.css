@@ -28,18 +28,11 @@ background-size: auto 150rem;
 
 
 .background-container {
-    background-color: white;
-    background-size: 500% 500%;
-    background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
-    animation: bgAnimation 15s infinite linear;
+background-color: white;
+background-size: 500% 500%;
+background-image: linear-gradient(60deg, rgb(161, 161, 253), rgb(254, 192, 255), rgb(214, 168, 255), rgb(255, 156, 156));
+animation: bgAnimation 15s infinite linear;
 }
-
-.background-container2 {
-    background-color: black;
-    background-size: 500% 500%;
-    background-image: linear-gradient(60deg, rgb(29, 29, 82), rgb(50, 30, 52), rgb(45, 30, 57), rgb(55, 21, 21));
-    animation: bgAnimation 15s infinite linear;
-    }
 
 @keyframes bgAnimation {
     0%{
@@ -52,6 +45,7 @@ background-size: auto 150rem;
         background-position: 0 85%;
     }
 }
+<<<<<<< HEAD
 /*popup overlay*/
 .overlay {
     position: fixed;
@@ -95,6 +89,8 @@ background-size: auto 150rem;
     transform: translateY(10px);
     transition: all .5s ease;
 }
+=======
+>>>>>>> parent of 537ea2c (Add files via upload)
 
 .button-sect{
     display: flex;
@@ -123,6 +119,7 @@ background-size: auto 150rem;
     height: auto;
     width: 60rem;
 }
+<<<<<<< HEAD
 /* phone number darkmode*/
 .book2{
     background-color: rgb(82 38 85);
@@ -139,8 +136,11 @@ background-size: auto 150rem;
     word-wrap: break-word;
 }
 /*placement of the phonebook*/
+=======
+
+>>>>>>> parent of 537ea2c (Add files via upload)
 .personlist{
-    padding-top: 3rem;
+    align-content: space-around;
     width: 60rem;
 }
 
@@ -158,7 +158,7 @@ background-size: auto 150rem;
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    align-items: center;
+
 }
 
 .contact {
@@ -166,32 +166,13 @@ background-size: auto 150rem;
     width: 55rem;
     padding-left: 3rem;
     padding-right: 3rem;
+    gap: 6rem;
+    margin-left: 3rem;
+    flex-wrap: nowrap;
     border-radius: 76px;
     border: solid rgb(226 43 57 / 21%);
     height: 15rem;
     align-items: center;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.contact :nth-child(2) {
-    width: 12%;
-}
-
-.contact :nth-child(3){
-    width: 30%;
-}
-
-.contact .button-menu :nth-child(1){
-    width: 4.5rem;
-}
-
-.contact .button-menu :nth-child(2){
-    width: 4.5rem;
-}
-
-.contact .button-menu :nth-child(3){
-    width: 4.5rem;
 }
 
 .title {
@@ -208,22 +189,23 @@ background-size: auto 150rem;
     justify-content: center;
     width: 7rem;
 }
-.button-sectdes2 {
-    background-color: rgb(134 55 115);
-    border: solid rgb(134 55 115);
-}
 
 .button-sect-bott{
     display: flex;
     margin-top: 1rem;
     justify-content: center;
-    gap: 1rem;
 }
 
 .button-menu{
     display: flex;
     gap: 1rem;
 }
+
+.contact > div:nth-child(3) {
+    position: absolute;
+    padding-left: 33rem;
+}
+
 .button{
     color: black;
     background-color: rgb(255 133 142);
@@ -234,15 +216,11 @@ background-size: auto 150rem;
     justify-content: center;
 }
 
-.button2{
-    background-color: rgb(134 55 115);
-    border: solid rgb(134 55 115);
-}
-
 .search-bar{
     display: flex;
     gap: 1rem;
 }
+<<<<<<< HEAD
 .info2 {
     color: white;
 }
@@ -257,6 +235,9 @@ background-size: auto 150rem;
     border-color: #d76e81;
 }
 /* footer */
+=======
+
+>>>>>>> parent of 537ea2c (Add files via upload)
 .footer-design{
     font-size: large;
     padding: 3rem;
@@ -264,7 +245,7 @@ background-size: auto 150rem;
 
     
 
-.label1 {
+label {
     display: inline-block;;
     width: 40px;
     height: 20px;
@@ -273,12 +254,17 @@ background-size: auto 150rem;
     position: relative;
     cursor: pointer;
 }
+<<<<<<< HEAD
 /* darkmode */
 .darkmode-border {
     border: solid rgb(124 56 143);
 }
 
 .label1::before {
+=======
+
+label::before {
+>>>>>>> parent of 537ea2c (Add files via upload)
     content: "";
     position: absolute;
     top: 2px;
@@ -302,6 +288,7 @@ background-size: auto 150rem;
 display: none;
 }
 
+<<<<<<< HEAD
 .add-layer {
     background-color: #0000007b;
     width: fit-content;
@@ -332,6 +319,8 @@ display: none;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+=======
+>>>>>>> parent of 537ea2c (Add files via upload)
 /* font*/
 .josefin-sans {
     font-family: "Josefin Sans", sans-serif;
