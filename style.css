@@ -15,15 +15,14 @@ font-size: 62.5%;
 body {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25rem;
-font-size: 1.6rem;
-font-weight: 400;
-line-height: 1.5;
-height: 100vh;
---h-color: rgb(18, 30, 75);
---a-color: #ff8000;
---border: 2px solid green;
-background-size: auto 150rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    height: 100vh;
+    --h-color: rgb(18, 30, 75);
+    --a-color: #ff8000;
+    --border: 2px solid green;
+    background-size: auto 150rem;
 }
 
 
@@ -52,7 +51,7 @@ background-size: auto 150rem;
         background-position: 0 85%;
     }
 }
-/*popup overlay*/
+/*phonebook overlay*/
 .overlay {
     position: fixed;
     left: 0;
@@ -113,6 +112,7 @@ background-size: auto 150rem;
 }
 /*phone number color */
 .book{
+    min-height: 100vh;
     display: flex;
     margin-top: 1rem;
     padding-bottom: 3rem;
@@ -260,6 +260,7 @@ background-size: auto 150rem;
 .footer-design{
     font-size: large;
     padding: 3rem;
+
 }
 
     
@@ -322,13 +323,13 @@ display: none;
 }
 /*test poppup*/
 #popup1 {
+    position: fixed;
     display: none;
     flex-direction: column;
     border: 1px solid black;
     padding: 20px;
-    background-color: white;
-    position: absolute;
-    top: 50%;
+   
+    top: 34%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -339,36 +340,89 @@ display: none;
     font-weight: weight;
     font-style: normal;
 }
+
 /* media Responsive*/
+/*meida 768*/
 @media (max-width: 768px) {
-    .main-popup {
-        top: 10%;
-        left: 5%;
-        height: auto;
+    .book{
+        width: 52rem;
+    }
+    .contact{
+        width: 50rem;
+    }
+    .text{
+        word-wrap: normal;
     }
 
-    .overlay {
-        visibility: visible;
+}
+/*media 425*/
+@media (max-width: 425px) {
+    .book{
+        width: 41rem;
+    }
+    .contact{
+        width: 40rem;
+        padding-left: 1rem;
+    }
+    .text{
+        word-wrap: normal;
+    }
+    .button-sect {
+        flex-direction: column;
+    }
+    .main-popup{
+        left: 10%;
+    }
+    #popup1{
+        width: 33rem;
     }
 }
-@media (max-width: 480px) {
-    .book, .book2 {
-        width: 100%; 
+/*media 375*/
+@media (max-width: 375px) {
+    .book {
+        width: 35rem;
     }
-
-    .main-popup {
-        width: 95%;
-        top: 5%;
-        left: 2.5%;
-    }
-
     .contact {
-        width: 37rem;
-        padding: 1rem; 
+        width: 34rem;
+        padding-left: 1rem;
     }
+    .text{
+        word-wrap: normal;
+    }
+    .button-sect {
+        flex-direction: column;
+    }
+    .main-popup {
 
-    .button-sect, .button-sect-bott {
-        flex-direction: column; /* Stack buttons vertically on very small screens */
+        left: 8%;
+    }  
+    #popup1 {
+        width: 31rem;
+        height: 32rem;
+        top:34%;
+    } 
+
+}
+/*media 344*/
+@media only screen and (max-width: 344px) {
+    .book{
+        width: 30rem;
+    }
+    .contact{
+        width: 29rem;
+    }
+    .text{
+        word-wrap: normal;
+    }
+    .contact :nth-child(3) {
+        width: 35%;
+    }
+    .main-popup{
+        left: 0;
+        height: 42rem;
+    }
+    #popup1 {
+        width: 31rem;
+        height: 32rem;
     }
 }
-
