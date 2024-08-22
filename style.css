@@ -371,4 +371,66 @@ display: none;
         flex-direction: column; /* Stack buttons vertically on very small screens */
     }
 }
+@media (max-width: 375px) {
+
+    body {
+        font-size: 1.4rem;
+    }
+    .text {
+        max-width: 7rem;
+        max-height: 6rem;
+        word-wrap: normal;
+    }
+    .book {
+        width: 100%;
+        height: auto;
+    }
+
+    .personlist {
+        padding-top: 1rem;
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .button-sect {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .button-sectdes {
+        width: 100%;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer-design {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .main-popup {
+        width: 80%;
+        left: 10%;
+        top: 20%;
+        padding: 2rem;
+        height: auto;
+    }
+
+    .overlay {
+        padding-top: 3rem;
+        height: auto;
+    }
+}
 
