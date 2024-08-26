@@ -27,6 +27,11 @@ contacts.push(...example);
 // this code will create a list of contacts with all specified elements.
 const ul = document.getElementById("contacts-list");
 let content = "";
+contacts.sort(function (a, b) {
+  if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1;
+  if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) return 1;
+  return 0;
+});
 contacts.forEach((elem, ind) => {
     const li=document.createElement('li');
     li.id = elem.phone;
@@ -113,7 +118,19 @@ function save(e) {
     let email = document.getElementById('email').value;
     let image = document.getElementById('image');
     let notes = document.getElementById('notes').value;
-
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('notes').value = '';
+    contacts.forEach(elem=>{
+        if(elem.name.localeCompare(name)===0)
+        alert("Name already exists!");
+    });
+    if(phone.length!=10) {
+    alert("Phone number must contain 10 numbers!");
+    return;
+    }
     if (!name || !phone)
     {
         alert("You must fill name and phone number fields in order to create a contact")
@@ -121,16 +138,12 @@ function save(e) {
     }
 
     let cont = { name: name, phone: phone, address: address, email: email, image: image !== null ? image : defaultImg, notes: notes };
-    document.getElementById('name').value = "";
-    document.getElementById('phone').value = "";
-    document.getElementById('address').value = "";
-    document.getElementById('email').value = "";
-    document.getElementById('notes').value = "";
+    
 
     contacts.push(cont);
     refresh(contacts);
 }
-// function to delete all the contacts in the phonebo
+// function to delete all the contacts in the phonebook
 function deleteAll() {
     if (confirm("Are you sure you want to delete all of your contacts?") === true) {
         contacts = [];
@@ -140,13 +153,32 @@ function deleteAll() {
 
 // function will delete a contact with a given phone number.
 function deleteCont(phoneNumber) {
-    contacts = contacts.filter((user) => user.phone !== phoneNumber)
-    document.getElementById(phoneNumber).remove();
+    if (confirm("Are you sure you want to delete this contact?") === true) {
+        contacts = contacts.filter(user => user.phone !== phoneNumber);
+        document.getElementById(phoneNumber).remove();
+    }
 }
 
 // function will build the list of contacts again.
 function refresh(data) {
+    if(contacts.length===0){
+        let noCont = document.querySelector('#noFound');
+        noCont.classList.remove('dontShow');
+        noCont.classList.add('justShow');
+    }
+    else {
+        let noCont = document.querySelector('#noFound');
+        noCont.classList.add('dontShow');
+        noCont.classList.remove('justShow');
+    }
     ul.innerHTML = "";
+    data.sort(function(a,b) {
+        if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) 
+        return -1;
+        if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase())
+        return 1;
+        return 0;
+    });
     data.forEach((elem, ind) => {
         const li=document.createElement('li');
         li.id = elem.phone;
@@ -188,6 +220,11 @@ function saveEdit(e){
     let phone = popup.querySelector("#phone1").value;
     let email = popup.querySelector("#email1").value;
     let address = popup.querySelector("#address1").value;
+
+    contacts.forEach(elem => {
+    if (elem.name.localeCompare(name) === 0)
+    alert('Name already exists!');
+    });
 
     if (!name || !phone || !email || !address)
     {

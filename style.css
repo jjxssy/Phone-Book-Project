@@ -331,6 +331,17 @@ display: none;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.dontShow{
+    display: none;
+}
+
+.justShow{
+    display: block;
+    width:inherit;
+    margin-left: 22rem;
+}
+
 /* font*/
 .josefin-sans {
     font-family: "Josefin Sans", sans-serif;
